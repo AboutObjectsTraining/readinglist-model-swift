@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B47F03E81E70AD9F009D43B9 /* ReadingListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47F03E71E70AD9F009D43B9 /* ReadingListTests.swift */; };
 		B4F05C531E704FB90018F5DA /* ReadingListModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F05C491E704FB90018F5DA /* ReadingListModel.framework */; };
 		B4F05C5A1E704FB90018F5DA /* ReadingListModel.h in Headers */ = {isa = PBXBuildFile; fileRef = B4F05C4C1E704FB90018F5DA /* ReadingListModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4F05C6B1E7052FF0018F5DA /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F05C651E7052FF0018F5DA /* Author.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B47F03E71E70AD9F009D43B9 /* ReadingListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingListTests.swift; sourceTree = "<group>"; };
 		B4F05C491E704FB90018F5DA /* ReadingListModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReadingListModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4F05C4C1E704FB90018F5DA /* ReadingListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReadingListModel.h; sourceTree = "<group>"; };
 		B4F05C4D1E704FB90018F5DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				B4F05C711E7053250018F5DA /* BookTests.swift */,
 				B4F05C731E7054750018F5DA /* AuthorTests.swift */,
+				B47F03E71E70AD9F009D43B9 /* ReadingListTests.swift */,
 				B4F05C591E704FB90018F5DA /* Info.plist */,
 			);
 			path = ReadingListModelTests;
@@ -236,6 +239,7 @@
 			files = (
 				B4F05C741E7054750018F5DA /* AuthorTests.swift in Sources */,
 				B4F05C721E7053250018F5DA /* BookTests.swift in Sources */,
+				B47F03E81E70AD9F009D43B9 /* ReadingListTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

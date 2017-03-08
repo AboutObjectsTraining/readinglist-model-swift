@@ -1,18 +1,17 @@
 // Copyright (C) 2017 About Objects, Inc. All Rights Reserved.
 // See LICENSE.txt for this example's licensing information.
 //
-import Foundation
 import XCTest
 
 @testable import ReadingListModel
 
 
-let authorDict: [String: Any] = [Author.firstNameKey: NSNull(),
-                                 Author.lastNameKey: "Homer"]
+private let authorDict: [String: Any] = [Author.firstNameKey: NSNull(),
+                                         Author.lastNameKey: "Homer"]
 
-let bookDict: [String: Any] = [Book.titleKey: "My Title",
-                               Book.yearKey: NSNull(),
-                               Book.authorKey: authorDict]
+private let bookDict: [String: Any] = [Book.titleKey: "My Title",
+                                       Book.yearKey: NSNull(),
+                                       Book.authorKey: authorDict]
 
 class BookTests: XCTestCase
 {
