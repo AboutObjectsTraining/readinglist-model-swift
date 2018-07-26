@@ -4,6 +4,11 @@
 import XCTest
 @testable import ReadingListModel
 
+private let authorDict1: [String: Any] = [Author.firstNameKey: "Fred",
+                                          Author.lastNameKey: "Smith"]
+private let authorDict2: [String: Any] = [Author.firstNameKey: "Fred",
+                                          Author.lastNameKey: NSNull()]
+
 class AuthorTests: XCTestCase
 {
     func testAuthorFullName() {

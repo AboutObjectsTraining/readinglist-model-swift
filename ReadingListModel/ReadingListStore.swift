@@ -26,7 +26,7 @@ open class ReadingListStore : NSObject
     /// URL of the store file in either the Documents directory if it exists there, or the app bundle
     lazy var url: URL? = self.documentExists ? self.documentUrl : self.bundleUrl
     
-    lazy var unableToLoadMessage: String = "Unable to load \(self.storeName) with \(self.storeType) at URL \(self.url)"
+    lazy var unableToLoadMessage: String = "Unable to load \(self.storeName) with \(self.storeType) at URL \(String(describing: self.url))"
     lazy var missingDocumentMessage: String = "Unable to locate \(self.storeName) in \(self.documentExists ? self.documentUrl.description : "app bundle")"
     
     /// Initializes a store with the provided name.

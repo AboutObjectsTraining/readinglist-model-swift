@@ -6,8 +6,8 @@ import Foundation
 
 open class ReadingList: ModelObject
 {    
-    public static let titleKey = "title"
-    public static let booksKey = "books"
+    public static let titleKey = #selector(getter: title).description
+    public static let booksKey = #selector(getter: books).description
     
     open var title = ""
     open var books = [Book]()

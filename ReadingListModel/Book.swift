@@ -6,9 +6,9 @@ import Foundation
 
 open class Book: ModelObject
 {
-    public static let titleKey = "title"
-    public static let yearKey = "year"
-    public static let authorKey = "author"
+    public static let titleKey = #selector(getter: title).description
+    public static let yearKey = #selector(getter: year).description
+    public static let authorKey = #selector(getter: author).description
     
     open var title: String?
     open var year: String?

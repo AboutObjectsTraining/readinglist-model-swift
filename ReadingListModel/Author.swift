@@ -6,8 +6,8 @@ import Foundation
 
 open class Author: ModelObject
 {
-    public static let firstNameKey = "firstName"
-    public static let lastNameKey = "lastName"
+    public static let firstNameKey = #selector(getter: firstName).description
+    public static let lastNameKey = #selector(getter: lastName).description
     public static let unknown = "Unknown"
     
     open var firstName: String?
