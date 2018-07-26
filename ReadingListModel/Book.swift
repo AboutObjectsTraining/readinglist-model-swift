@@ -10,9 +10,9 @@ open class Book: ModelObject
     public static let yearKey = #selector(getter: year).description
     public static let authorKey = #selector(getter: author).description
     
-    open var title: String?
-    open var year: String?
-    open var author: Author?
+    @objc open var title: String?
+    @objc open var year: String?
+    @objc open var author: Author?
     
     open override var description: String {
         return "title: \(title ?? "nil"), year: \(year ?? "nil"), author: \(author?.description ?? "nil")"

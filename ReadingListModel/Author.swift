@@ -10,8 +10,8 @@ open class Author: ModelObject
     public static let lastNameKey = #selector(getter: lastName).description
     public static let unknown = "Unknown"
     
-    open var firstName: String?
-    open var lastName: String?
+    @objc open var firstName: String?
+    @objc open var lastName: String?
     
     open var fullName: String {
         switch (firstName, lastName) {

@@ -9,8 +9,8 @@ open class ReadingList: ModelObject
     public static let titleKey = #selector(getter: title).description
     public static let booksKey = #selector(getter: books).description
     
-    open var title = ""
-    open var books = [Book]()
+    @objc open var title = ""
+    @objc open var books = [Book]()
     
     open override var description: String {
         var s = "Title: \(title)\nCount: \(books.count)\nBooks:\n------\n"
