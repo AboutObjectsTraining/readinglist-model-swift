@@ -6,9 +6,12 @@ import Foundation
 
 open class Book: ModelObject
 {
-    public static let titleKey = #selector(getter: title).description
-    public static let yearKey = #selector(getter: year).description
-    public static let authorKey = #selector(getter: author).description
+    public struct Keys {
+        public static let title = #selector(getter: Book.title).description
+        public static let year = #selector(getter: Book.year).description
+        public static let author = #selector(getter: Book.author).description
+        static var all: [String] { return [title, year, author] }
+    }
     
     @objc open var title: String?
     @objc open var year: String?
@@ -19,21 +22,21 @@ open class Book: ModelObject
     }
     
     open override class var keys: [String] {
-        return [titleKey, yearKey, authorKey]
+        return Keys.all
     }
     
     public required init(dictionary: [String : Any]) {
         var bookInfo = dictionary
-        if let authorInfo = dictionary[Book.authorKey] as? [String: Any] {
-            bookInfo[Book.authorKey] = Author(dictionary: authorInfo)
+        if let authorInfo = dictionary[Keys.author] as? [String: Any] {
+            bookInfo[Keys.author] = Author(dictionary: authorInfo)
         }
         super.init(dictionary: bookInfo)
     }
     
     open override func dictionaryRepresentation() -> [String: Any] {
         var dict = super.dictionaryRepresentation()
-        if let author = dict[Book.authorKey] as? Author {
-            dict[Book.authorKey] = author.dictionaryRepresentation() as Any?
+        if let author = dict[Keys.author] as? Author {
+            dict[Keys.author] = author.dictionaryRepresentation() as Any?
         }
         return dict
     }

@@ -6,8 +6,11 @@ import Foundation
 
 open class Author: ModelObject
 {
-    public static let firstNameKey = #selector(getter: firstName).description
-    public static let lastNameKey = #selector(getter: lastName).description
+    public struct Keys {
+        public static let firstName = #selector(getter: Author.firstName).description
+        public static let lastName = #selector(getter: Author.lastName).description
+        static var all: [String] { return [firstName, lastName] }
+    }
     public static let unknown = "Unknown"
     
     @objc open var firstName: String?
@@ -27,6 +30,6 @@ open class Author: ModelObject
     }
     
     open override class var keys: [String] {
-        return [firstNameKey, lastNameKey]
+        return Keys.all
     }
 }
