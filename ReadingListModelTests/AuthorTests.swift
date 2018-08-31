@@ -4,9 +4,9 @@
 import XCTest
 @testable import ReadingListModel
 
-private let authorDict1: [String: Any] = [Author.Keys.firstName: "Fred",
+private let authorDict1: JsonDictionary = [Author.Keys.firstName: "Fred",
                                           Author.Keys.lastName: "Smith"]
-private let authorDict2: [String: Any] = [Author.Keys.firstName: "Fred",
+private let authorDict2: JsonDictionary = [Author.Keys.firstName: "Fred",
                                           Author.Keys.lastName: NSNull()]
 
 class AuthorTests: XCTestCase

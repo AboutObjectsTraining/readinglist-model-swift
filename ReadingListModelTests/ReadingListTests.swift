@@ -7,16 +7,16 @@ import XCTest
 private let authorDict = [Author.Keys.firstName: "Fred",
                           Author.Keys.lastName: "Smith"]
 
-private let book1Dict: [String: Any] = [Book.Keys.title: "Book One",
-                                    Book.Keys.year: "1999",
-                                    Book.Keys.author: authorDict]
-private let book2Dict: [String: Any] = [Book.Keys.title: "Book Two",
-                                    Book.Keys.year: "2001",
-                                    Book.Keys.author: authorDict]
-private let bookDicts: [[String: Any]] = [book1Dict, book2Dict]
+private let book1Dict: JsonDictionary = [Book.Keys.title: "Book One",
+                                         Book.Keys.year: "1999",
+                                         Book.Keys.author: authorDict]
+private let book2Dict: JsonDictionary = [Book.Keys.title: "Book Two",
+                                         Book.Keys.year: "2001",
+                                         Book.Keys.author: authorDict]
+private let bookDicts: [JsonDictionary] = [book1Dict, book2Dict]
 
-private let readingListDict: [String: Any] = [ReadingList.Keys.title: "Test",
-                                              ReadingList.Keys.books: bookDicts]
+private let readingListDict: JsonDictionary = [ReadingList.Keys.title: "Test",
+                                               ReadingList.Keys.books: bookDicts]
 
 class ReadingListTests: XCTestCase
 {
@@ -37,7 +37,7 @@ class ReadingListTests: XCTestCase
         let readingList = ReadingList(dictionary: readingListDict)
         let rlDict = readingList.dictionaryRepresentation()
         
-        let bDicts = rlDict[ReadingList.Keys.books] as? [[String: Any]]
+        let bDicts = rlDict[ReadingList.Keys.books] as? [JsonDictionary]
         XCTAssertEqual(bDicts!.count, bookDicts.count)
     }
 }

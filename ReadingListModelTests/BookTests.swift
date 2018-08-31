@@ -6,12 +6,12 @@ import XCTest
 @testable import ReadingListModel
 
 
-private let authorDict: [String: Any] = [Author.Keys.firstName: NSNull(),
-                                         Author.Keys.lastName: "Homer"]
+private let authorDict: JsonDictionary = [Author.Keys.firstName: NSNull(),
+                                          Author.Keys.lastName: "Homer"]
 
-private let bookDict: [String: Any] = [Book.Keys.title: "My Title",
-                                       Book.Keys.year: NSNull(),
-                                       Book.Keys.author: authorDict]
+private let bookDict: JsonDictionary = [Book.Keys.title: "My Title",
+                                        Book.Keys.year: NSNull(),
+                                        Book.Keys.author: authorDict]
 
 class BookTests: XCTestCase
 {

@@ -29,13 +29,13 @@ open class ReadingList: ModelObject
     
     open override func setValue(_ value: Any?, forKey key: String) {
         var books: [Book]?
-        if key == Keys.books, let dicts = value as? [[String: Any]] {
+        if key == Keys.books, let dicts = value as? [JsonDictionary] {
             books = dicts.map { Book(dictionary: $0) }
         }
         super.setValue(books ?? value, forKey: key)
     }
     
-    open override func dictionaryRepresentation() -> [String: Any] {
+    open override func dictionaryRepresentation() -> JsonDictionary {
         var dict = super.dictionaryRepresentation()
         if let books = dict[Keys.books] as? [ModelObject] {
             dict[Keys.books] = books.map { $0.dictionaryRepresentation() }

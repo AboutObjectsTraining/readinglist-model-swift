@@ -27,13 +27,13 @@ open class Book: ModelObject
     
     public required init(dictionary: [String : Any]) {
         var bookInfo = dictionary
-        if let authorInfo = dictionary[Keys.author] as? [String: Any] {
+        if let authorInfo = dictionary[Keys.author] as? JsonDictionary {
             bookInfo[Keys.author] = Author(dictionary: authorInfo)
         }
         super.init(dictionary: bookInfo)
     }
     
-    open override func dictionaryRepresentation() -> [String: Any] {
+    open override func dictionaryRepresentation() -> JsonDictionary {
         var dict = super.dictionaryRepresentation()
         if let author = dict[Keys.author] as? Author {
             dict[Keys.author] = author.dictionaryRepresentation() as Any?

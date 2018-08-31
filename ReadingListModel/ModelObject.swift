@@ -4,16 +4,18 @@
 //
 import Foundation
 
+public typealias JsonDictionary = [String: Any]
+
 open class ModelObject: NSObject
 {
     open class var keys: [String] { return [] }
     
-    public required init(dictionary: [String: Any]) {
+    public required init(dictionary: JsonDictionary) {
         super.init()
         self.setValuesForKeys(dictionary)
     }
     
-    open func dictionaryRepresentation() -> [String: Any] {
+    open func dictionaryRepresentation() -> JsonDictionary {
         return self.dictionaryWithValues(forKeys: type(of: self).keys) as [String : Any]
     }
 }
