@@ -13,7 +13,7 @@ open class ReadingListStore : NSObject
     /// File extension of the store file
     public let storeType = "plist"
     /// Name of the store file
-    public let storeName: String
+    @IBInspectable public let storeName: String
     /// A `ReadingList` instance initialized with the contents of the store file
     open lazy var fetchedReadingList: ReadingList = self.fetch()
     /// URL of the store file in the Documents directory.
